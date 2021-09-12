@@ -157,4 +157,5 @@ SUPPORTED_DATASETS = {
     "yelp2018": "cogdl.datasets.rec_data",
     "ali": "cogdl.datasets.rec_data",
     "amazon-rec": "cogdl.datasets.rec_data",
+    "rd2cd_Github":"cogdl.datasets.rd2cd_data",
 }

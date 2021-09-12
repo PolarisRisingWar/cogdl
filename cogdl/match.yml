@@ -55,6 +55,7 @@ node_classification:
     - ppi-large
     - reddit
     - test_small
+    - rd2cd_Github
 unsupervised_node_classification:
   - model:
     - prone
