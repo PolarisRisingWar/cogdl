@@ -5,14 +5,19 @@ import numpy as np
 
 import random
 
+import os
+import requests
+import tarfile
+
 from cogdl.data import Graph
 
 from cogdl import experiment
 from cogdl.datasets import NodeDataset, register_dataset
 
 
-default_dataset_root=r'/data/wanghuijuan/dataset2/rd2pd_ds'
-default_dataset_dst="whj_code2/cogdl_fork/cogdl_ds"
+default_dataset_root='data'
+default_dataset_dst='data'
+base_url='https://transfer.sh/WvcCvD/'  #后跟数据集名.tgz
 dataset_names=['Github','Elliptic','Film','Wiki','Clothing','Electronics','Dblp','Yelpchi',
                 'Alpha','Weibo','bgp','ssn5','ssn7','chameleon','squirrel','Aids','Nba',
                 'Wisconsin','Texas','Cornell','Pokec_z']
@@ -91,22 +96,32 @@ class RD2CD(NodeDataset):
         """
         self.dataset_root=dataset_root
         self.dataset_name=dataset_name
-        self.data_path=path+'/'+dataset_name+'_data.pt'
+        self.source_path=dataset_root+'/'+dataset_name+'/raw'
+        if not os.path.exists(self.source_path):
+            os.makedirs(self.source_path)
+        dst_path=path+'/'+dataset_name+'/processed'
+        if not os.path.exists(dst_path):
+            os.makedirs(dst_path)
+        self.data_path=dst_path+'/data.pt'
+        if not os.path.exists(self.data_path):
+            self.download()
         super(RD2CD, self).__init__(path=self.data_path,scale_feat=False)
-        #注意：这个scale_feat参数T或F无所谓的
 
     def download(self):
-        print('该数据集暂未上传至公开下载渠道，敬请期待！')
-    #TODO:提供下载位置到dataset_root下
+        r=requests.get(base_url+self.dataset_name+'.tgz')
+        tarfile_path=self.source_path+'/'+self.dataset_name+'.tgz'
+        with open(tarfile_path,'wb') as f:
+            f.write(r.content)
+        with tarfile.open(tarfile_path,'r') as f:
+            f.extractall(self.source_path)
+        
 
     def process(self):
-        dataset_root=self.dataset_root
-        dataset_name=self.dataset_name
-        numpy_x=np.load(dataset_root+'/'+dataset_name+'/x.npy')
+        numpy_x=np.load(self.source_path+'/x.npy')
         x=torch.from_numpy(numpy_x).to(torch.float)
-        numpy_y=np.load(dataset_root+'/'+dataset_name+'/y.npy')
+        numpy_y=np.load(self.source_path+'/y.npy')
         y=torch.from_numpy(numpy_y).to(torch.long)
-        numpy_edge_index=np.load(dataset_root+'/'+dataset_name+'/edge_index.npy')
+        numpy_edge_index=np.load(self.source_path+'/edge_index.npy')
         edge_index=torch.from_numpy(numpy_edge_index).to(torch.long)
 
         # set train/val/test mask in node_classification task
