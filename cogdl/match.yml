@@ -56,6 +56,26 @@ node_classification:
     - reddit
     - test_small
     - rd2cd_Github
+    - rd2cd_Elliptic
+    - rd2cd_Film
+    - rd2cd_Wiki
+    - rd2cd_Clothing
+    - rd2cd_Electronics
+    - rd2cd_Dblp
+    - rd2cd_Yelpchi
+    - rd2cd_Alpha
+    - rd2cd_Weibo
+    - rd2cd_bgp
+    - rd2cd_ssn5
+    - rd2cd_ssn7
+    - rd2cd_chameleon
+    - rd2cd_squirrel
+    - rd2cd_Aids
+    - rd2cd_Nba
+    - rd2cd_Wisconsin
+    - rd2cd_Texas
+    - rd2cd_Cornell
+    - rd2cd_Pokec_z
 unsupervised_node_classification:
   - model:
     - prone

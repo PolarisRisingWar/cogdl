@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0,'whj_code2/cogdl_fork/cogdl')
+
 from cogdl.datasets import build_dataset
 from cogdl.utils import build_args_from_dict
 

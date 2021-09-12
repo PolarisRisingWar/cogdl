@@ -10,7 +10,9 @@ from cogdl.data import Graph
 from cogdl import experiment
 from cogdl.datasets import NodeDataset, register_dataset
 
+
 default_dataset_root=r'/data/wanghuijuan/dataset2/rd2pd_ds'
+default_dataset_dst="whj_code2/cogdl_fork/cogdl_ds"
 dataset_names=['Github','Elliptic','Film','Wiki','Clothing','Electronics','Dblp','Yelpchi',
                 'Alpha','Weibo','bgp','ssn5','ssn7','chameleon','squirrel','Aids','Nba',
                 'Wisconsin','Texas','Cornell','Pokec_z']
@@ -94,7 +96,7 @@ class RD2CD(NodeDataset):
         #注意：这个scale_feat参数T或F无所谓的
 
     def download(self):
-        pass
+        print('该数据集暂未上传至公开下载渠道，敬请期待！')
     #TODO:提供下载位置到dataset_root下
 
     def process(self):
@@ -123,127 +125,127 @@ class RD2CD(NodeDataset):
 @register_dataset('rd2cd_Github')
 class rd2cd_Github(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Github,self).__init__(default_dataset_root,'Github',self.path)
 
 @register_dataset('rd2cd_Elliptic')
 class rd2cd_Elliptic(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Elliptic,self).__init__(default_dataset_root,'Elliptic',self.path)
 
 @register_dataset('rd2cd_Film')
 class rd2cd_Film(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Film,self).__init__(default_dataset_root,'Film',self.path)
 
 @register_dataset('rd2cd_Wiki')
 class rd2cd_Wiki(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Wiki,self).__init__(default_dataset_root,'Wiki',self.path)
 
 @register_dataset('rd2cd_Clothing')
 class rd2cd_Clothing(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Clothing,self).__init__(default_dataset_root,'Clothing',self.path)
 
 @register_dataset('rd2cd_Electronics')
 class rd2cd_Electronics(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Electronics,self).__init__(default_dataset_root,'Electronics',self.path)
 
 @register_dataset('rd2cd_Dblp')
 class rd2cd_Dblp(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Dblp,self).__init__(default_dataset_root,'Dblp',self.path)
 
 @register_dataset('rd2cd_Yelpchi')
 class rd2cd_Yelpchi(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Yelpchi,self).__init__(default_dataset_root,'Yelpchi',self.path)
 
 @register_dataset('rd2cd_Alpha')
 class rd2cd_Alpha(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Alpha,self).__init__(default_dataset_root,'Alpha',self.path)
 
 @register_dataset('rd2cd_Weibo')
 class rd2cd_Weibo(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Weibo,self).__init__(default_dataset_root,'Weibo',self.path)
 
 @register_dataset('rd2cd_bgp')
 class rd2cd_bgp(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_bgp,self).__init__(default_dataset_root,'bgp',self.path)
 
 @register_dataset('rd2cd_ssn5')
 class rd2cd_ssn5(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_ssn5,self).__init__(default_dataset_root,'ssn5',self.path)
 
 @register_dataset('rd2cd_ssn7')
 class rd2cd_ssn7(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_ssn7,self).__init__(default_dataset_root,'ssn7',self.path)
 
 @register_dataset('rd2cd_chameleon')
 class rd2cd_chameleon(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_chameleon,self).__init__(default_dataset_root,'chameleon',self.path)
 
 @register_dataset('rd2cd_squirrel')
 class rd2cd_squirrel(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_squirrel,self).__init__(default_dataset_root,'squirrel',self.path)
 
 @register_dataset('rd2cd_Aids')
 class rd2cd_Aids(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Aids,self).__init__(default_dataset_root,'Aids',self.path)
 
 @register_dataset('rd2cd_Nba')
 class rd2cd_Nba(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Nba,self).__init__(default_dataset_root,'Nba',self.path)
 
 @register_dataset('rd2cd_Wisconsin')
 class rd2cd_Wisconsin(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Wisconsin,self).__init__(default_dataset_root,'Wisconsin',self.path)
 
 @register_dataset('rd2cd_Texas')
 class rd2cd_Texas(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Texas,self).__init__(default_dataset_root,'Texas',self.path)
 
 @register_dataset('rd2cd_Cornell')
 class rd2cd_Cornell(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Cornell,self).__init__(default_dataset_root,'Cornell',self.path)
 
 @register_dataset('rd2cd_Pokec_z')
 class rd2cd_Pokec_z(RD2CD):
     def __init__(self):
-        self.path = "whj_code2/cogdl_fork/cogdl_ds"
+        self.path = default_dataset_dst
         super(rd2cd_Pokec_z,self).__init__(default_dataset_root,'Pokec_z',self.path)
 
 #experiment(task="node_classification", dataset="rd2cd_Github", model="gcn")
