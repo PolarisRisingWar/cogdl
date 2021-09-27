@@ -90,7 +90,7 @@ def check_train_containing(train_mask,y):
 class RD2CD(NodeDataset):
     def __init__(self, dataset_root,dataset_name,path):
         """
-        dataset_root: 原始数据集存储位置（内置名为dataset_name的文件夹，文件夹下内置x.npy、y.npy、edge_index.npy文件）
+        dataset_root: 原始数据集存储位置（内置名为dataset_name的文件夹）
         dataset_name: 如Github
         path: 处理后数据要存储的位置（在该位置下放置名为dataset_name_data.pt的处理后数据）
         """
